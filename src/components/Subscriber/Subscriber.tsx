@@ -9,9 +9,6 @@ export const Subscriber: React.FC = () => {
   const chosenContactRedux = useSelector(selectors.chosenContact);
   const [chosenContact, setchosenContact] = useState(chosenContactRedux);
 
-  // eslint-disable-next-line no-console
-  console.log(chosenContact);
-
   useEffect(() => {
     const contact = chosenContactRedux;
 

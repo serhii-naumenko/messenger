@@ -1,52 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { AnswerFrom } from '../AnswerFrom';
 import { MyReply } from '../MyReply';
 import './Chat.scss';
+import { selectors } from '../../redux/reducer';
 
 import Josefina from '../../images/josefina.png';
 
-const chosenContact = {
-  lastMessage: 'Quickly come to the meeting room 1B, we have a big server issue fffffffffff fffffffffff ffffffffffff',
-  // lastMessage: 'Quickly come to the meeting',
-  lastTime: '02/18/2017 04:00 AM',
-  contactPhoto: `${Josefina}`,
-};
-
-const myMassage = {
-  text: 'I\'m having breakfast right now, can\'t you wait for 10 minutes?',
-  time: '02/18/2017 04:05 AM',
-};
-
 export const Chat: React.FC = () => {
+  const chosenContactRedux = useSelector(selectors.chosenContact);
+  const [chosenContact, setchosenContact] = useState(chosenContactRedux);
+
+  useEffect(() => {
+    const contact = chosenContactRedux;
+
+    setchosenContact(contact);
+  }, [chosenContactRedux]);
+
   return (
-    <div className="Chat">
-      <AnswerFrom
-        photoOfСompanion={chosenContact.contactPhoto}
-        textCompanion={chosenContact.lastMessage}
-        dateCompanion={chosenContact.lastTime}
-      />
-      <MyReply
-        myText={myMassage.text}
-        myTime={myMassage.time}
-      />
-      <AnswerFrom
-        photoOfСompanion={chosenContact.contactPhoto}
-        textCompanion={chosenContact.lastMessage}
-        dateCompanion={chosenContact.lastTime}
-      />
-      <MyReply
-        myText={myMassage.text}
-        myTime={myMassage.time}
-      />
-      <AnswerFrom
-        photoOfСompanion={chosenContact.contactPhoto}
-        textCompanion={chosenContact.lastMessage}
-        dateCompanion={chosenContact.lastTime}
-      />
-      <MyReply
-        myText={myMassage.text}
-        myTime={myMassage.time}
-      />
-    </div>
+    <ul className="Chat">
+      {chosenContact.dialog.map((message, index) => (
+        <li
+          className="Chat__item"
+          key={message.time}
+        >
+          {message.isAnswer && (
+            <AnswerFrom
+              photoOfСompanion={Josefina}
+              textCompanion={chosenContact.dialog[index].text}
+              dateCompanion={chosenContact.dialog[index].time}
+            />
+          )}
+          {!message.isAnswer && (
+            <MyReply
+              myText={chosenContact.dialog[index].text}
+              myTime={chosenContact.dialog[index].time}
+            />
+          )}
+        </li>
+      ))}
+    </ul>
   );
 };

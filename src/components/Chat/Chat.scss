@@ -7,4 +7,8 @@
   overflow: hidden;
   overflow-y: scroll;
   background-color: rgba(244, 236, 236, 0.5);
+
+  &__item {
+    list-style: none;
+  }
 }

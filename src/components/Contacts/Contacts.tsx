@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { PhotoCheck } from '../PhotoCheck';
 import './Contacts.scss';
@@ -12,12 +12,22 @@ const startPictures = [alice, josefina, velazgquez, borrera];
 
 export const Contacts: React.FC = () => {
   const startContactsInfo = useSelector(selectors.loadedContactsInfo);
+  const querySearch = useSelector(selectors.queryForSearch);
+  const [contactsToRender, setContactsToRender] = useState(startContactsInfo);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const query = querySearch;
+    const visibleContacts = startContactsInfo.filter((contact) => contact.name
+      .toUpperCase().includes(query.toUpperCase()));
+
+    setContactsToRender(visibleContacts);
+  }, [querySearch]);
 
   const handlerChoseContact = useCallback((index) => {
     const previousContactsInfo = startContactsInfo;
     const contactForDialog = previousContactsInfo.find((prevContact) => {
-      return +prevContact.id === index + 1;
+      return +prevContact.id === index;
     });
 
     if (contactForDialog) {
@@ -31,7 +41,7 @@ export const Contacts: React.FC = () => {
         Chats
       </h1>
       <ul className="Contacts__list">
-        {startContactsInfo.map((contact, index) => (
+        {contactsToRender.map((contact) => (
           <li
             className="Contacts__item"
             key={contact.id}
@@ -39,9 +49,9 @@ export const Contacts: React.FC = () => {
             <button
               type="button"
               className="Contacts__button"
-              onClick={() => handlerChoseContact(index)}
+              onClick={() => handlerChoseContact(+contact.id)}
             >
-              <PhotoCheck imageFace={startPictures[index]} />
+              <PhotoCheck imageFace={startPictures[+contact.id - 1]} />
               <div className="Contacts__info">
                 <div className="Contacts__name-text">
                   <h3 className="Contacts__name">

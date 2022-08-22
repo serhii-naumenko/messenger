@@ -22,7 +22,7 @@ export const Message: React.FC = () => {
   useEffect(() => {
     // eslint-disable-next-line no-console
     console.log(answer);
-  });
+  }, [answer]);
 
   return (
     <div className="Message">
