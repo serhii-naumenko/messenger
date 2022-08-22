@@ -1,3 +1,16 @@
-.starter {
-  font-size: 18px;
+@import './styles/index.scss';
+.App {
+  display: flex;
+
+  &__contact-groupe {
+    width: 35%;
+    border-right: 1px solid $color-board-separator;
+    border-bottom: 1px solid $color-board-separator;
+  }
+  
+  &__chat-groupe {
+    flex-grow: 1;
+    text-align: center;
+    border-bottom: 1px solid $color-board-separator;
+  }
 }

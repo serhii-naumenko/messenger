@@ -1,0 +1,19 @@
+@import '../../styles/index.scss';
+
+.Subscriber {
+  position: sticky;
+  top: 0;
+  padding: 0 40px;
+  background-color: $main-background;
+  border-bottom: 1px solid $color-board-separator;
+  display: flex;
+  align-items: center;
+  height: $height-subscriber-comp;
+  z-index: 1;
+
+  &__name {
+    margin-left: 20px;
+    font-weight: bolder;
+    font-size: 25px;
+  }
+}

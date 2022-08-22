@@ -1,0 +1,53 @@
+@import '../../styles/index.scss';
+
+.Message {
+  background-color: $main-background;
+  border-top: 1px solid $color-board-separator;
+  padding: 0 20px;
+  height: $height-message-comp;
+  display: flex;
+  align-items: center;
+  
+  &__form {
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+  
+  &__input {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 74px;
+    line-height: 40px;
+    border-radius: 15px;
+    
+    &:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active  {
+         box-shadow: 0 0 0 30px #fff inset !important;
+    }
+
+    &::placeholder {
+      opacity: 0.7;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: 10px;
+    bottom: 2px;
+    padding: 8px 10px;
+    cursor: pointer;
+    background-color: white;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    background-image: url(../../images/send_arrow.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

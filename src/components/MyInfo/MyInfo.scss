@@ -1,0 +1,39 @@
+@import '../../styles/index.scss';
+
+.MyInfo {
+  padding: 20px;
+  background-color: $main-background;
+  border-bottom: 1px solid $color-board-separator;
+
+  &__container {
+    margin-bottom: 20px;
+  }
+
+  &__search-groupe {
+    position: relative;
+  }
+
+  &__search {
+    padding-left: 30px;
+    border-radius: 20px;
+    width: 100%;
+    line-height: 30px;
+
+    &::placeholder {
+      opacity: 0.7;
+    }
+  }
+
+  &__glass {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-image: url(../../images/Search.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

@@ -1,0 +1,10 @@
+@import '../../styles/index.scss';
+
+.Chat {
+  // height: calc($vh - 165px);
+  height: $height-chat-comp;
+  padding: 20px;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: rgba(244, 236, 236, 0.5);
+}
