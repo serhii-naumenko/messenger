@@ -1,22 +1,28 @@
-import React, { useCallback } from 'react';
-import { resp } from '../../api/api';
+import React, { useCallback, useEffect, useState } from 'react';
+import { getAnswerFromChack } from '../../api/api';
 import './Message.scss';
 
 export const Message: React.FC = () => {
+  const [answer, setAnswer] = useState('');
+
   const handlerSubmit = useCallback((event) => {
     event.preventDefault();
-    // async function response() {
-    //   const answerChackServer = await getAnswerFromChack();
-    //   const answerFromChack = {
-    //     ...answerChackServer,
-    //   };
+    async function response() {
+      const answerChackServer = await getAnswerFromChack();
+      const answerFromChack = {
+        ...answerChackServer,
+      };
 
-    //   // eslint-disable-next-line no-console
-    //   console.log(answerFromChack.value);
-    // }
+      setAnswer(answerFromChack.value);
+    }
 
-    resp();
+    response();
   }, []);
+
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log(answer);
+  });
 
   return (
     <div className="Message">

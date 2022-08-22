@@ -2,7 +2,7 @@
 
 Create an imitator of a messenger.
 
-### Stack
+## Stack
 
 HTML5, SASS, JavaScript, Typescropt
 React, React-redux, fetch

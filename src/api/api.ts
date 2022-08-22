@@ -17,13 +17,3 @@ export const getAnswerFromChack = async (): Promise<Answer> => {
 
   return result;
 };
-
-export async function resp() {
-  const answerChackServer = await getAnswerFromChack();
-  const answerFromChack = {
-    ...answerChackServer,
-  };
-
-  // eslint-disable-next-line no-console
-  console.log(answerFromChack.value);
-}

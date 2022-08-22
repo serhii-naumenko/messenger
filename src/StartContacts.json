@@ -1,0 +1,66 @@
+{
+  "startContactsInfo": [
+    {
+      "id": "1",
+      "name": "Alice Freeman",
+      "dialog":[
+        {
+            "isAnswer": true,
+            "text": "You are the worst!",
+            "time": "Jun 12 2017"
+        }
+      ],
+      "isActive": false,
+      "picture": "~/src/images/alice.png"
+    },
+    {
+      "id": "2",
+      "name": "Josefina",
+      "dialog":[
+        {
+            "isAnswer": true,
+            "text": "Quickly come to the meeting room 1B, we have a big server issue.",
+            "time": "4/22/17 04:00 AM"
+        },
+        {
+            "isAnswer": false,
+            "text": "I'm having breakfast right now, can't you wait for 10 minutes?",
+            "time": "4/22/17 04:05 AM"
+        },
+        {
+            "isAnswer": true,
+            "text": "We are losing money! Quick!",
+            "time": "4/22/17 04:10 AM"
+        }
+      ],
+      "isActive": true,
+      "picture": "~/images/josefina.png"
+    },
+    {
+      "id": "3",
+      "name": "Velazgquez",
+      "dialog":[
+        {
+            "isAnswer": true,
+            "text": "Quickly come to the meeting room 1B, we have a big server issue",
+            "time": "Mar 18, 2017"
+        }
+      ],
+      "isActive": false,
+      "picture": "~/images/velazgques.png"
+    },
+    {
+      "id": "4",
+      "name": "Barrera",
+      "dialog":[
+        {
+            "isAnswer": true,
+            "text": "You are the worst!",
+            "time": "Feb 18, 2017"
+        }
+      ],
+      "isActive": false,
+      "picture": "~/images/barrera.png"
+    }
+  ]
+}
