@@ -1,9 +1,10 @@
-# React TypeScript Starter Pack
+# Main goal
 
-To use this template click `Use this template`
+Create an imitator of a messenger.
 
-### Available Scripts
+### Stack
 
-`Deploy` - available to deploy your application to gh-pages
+HTML5, SASS, JavaScript, Typescropt
+React, React-redux, fetch
 
-`SCSS Preprocessor` - available to write your styles with modern style language
+[DEMO](https://serhii-naumenko.github.io/messenger/)
