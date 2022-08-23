@@ -10,25 +10,27 @@ if (contactsInfoFromStorage !== null) {
 }
 
 interface InitialState {
-  startContactsInfo: OneContactInfo[],
+  contactsInfo: OneContactInfo[],
   chosenContact: OneContactInfo,
   queryForSearch: string,
+  answerFromChack: string,
 }
 
 const initialState: InitialState = {
-  startContactsInfo: [...contactsStart],
-  chosenContact: startContactsInfo[1],
+  contactsInfo: [...contactsStart],
+  chosenContact: startContactsInfo[0],
   queryForSearch: '',
+  answerFromChack: '',
 };
 
 const occasionReducer = createSlice({
   name: 'contactInao',
   initialState,
   reducers: {
-    getcontactsInfo: (state, action) => {
+    setcontactsInfo: (state, action) => {
       return {
         ...state,
-        startContactsInfo: action.payload,
+        contactsInfo: action.payload,
       };
     },
     setchosenContact: (state, action) => {
@@ -43,19 +45,27 @@ const occasionReducer = createSlice({
         queryForSearch: action.payload,
       };
     },
+    setAnswerFromChack: (state, action) => {
+      return {
+        ...state,
+        answerFromChack: action.payload,
+      };
+    },
   },
 });
 
 export const selectors = {
-  loadedContactsInfo: (state: InitialState) => state.startContactsInfo,
+  loadedContactsInfo: (state: InitialState) => state.contactsInfo,
   chosenContact: (state: InitialState) => state.chosenContact,
   queryForSearch: (state: InitialState) => state.queryForSearch,
+  answerFromChack: (state: InitialState) => state.answerFromChack,
 };
 
 export const {
-  getcontactsInfo,
+  setcontactsInfo,
   setchosenContact,
   setQueryForSearch,
+  setAnswerFromChack,
 } = occasionReducer.actions;
 
 export const { reducer } = occasionReducer;

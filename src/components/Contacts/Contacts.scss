@@ -1,17 +1,16 @@
 @import '../../styles/index.scss';
 
 .Contacts {
-  padding-top: 25px;
-  
+
   &__title {
+    height: $height-title-contacts;
     font-size: 25px;
     color: rgb(0, 221, 255);
-    margin-bottom: 35px;
-    padding-left: 20px;
+    padding: 20px;
   }
 
   &__list {
-    height: 295px;
+    height: calc(100vh - #{$height-myinfo-comp} - #{$height-title-contacts} - 1px);
     overflow: hidden;
     overflow-y: scroll;
   }

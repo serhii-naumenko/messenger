@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 import { PhotoCheck } from '../PhotoCheck';
 import './AnswerFrom.scss';
@@ -24,7 +25,7 @@ export const AnswerFrom: React.FC<Props> = ({
         </div>
       </div>
       <p className="AnswerFrom__date">
-        {dateCompanion}
+        {moment(`${dateCompanion}`, 'M/DD/YY HH:mm:ss A').format('M/DD/YY HH:mm A')}
       </p>
     </div>
   );

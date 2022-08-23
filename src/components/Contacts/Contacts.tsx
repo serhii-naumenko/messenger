@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { PhotoCheck } from '../PhotoCheck';
 import './Contacts.scss';
@@ -6,9 +7,10 @@ import alice from '../../images/alice.png';
 import josefina from '../../images/josefina.png';
 import velazgquez from '../../images/velazgquez.png';
 import borrera from '../../images/barrera.png';
+import kind from '../../images/kind.png';
 import { selectors, setchosenContact } from '../../redux/reducer';
 
-const startPictures = [alice, josefina, velazgquez, borrera];
+const startPictures = [alice, josefina, velazgquez, borrera, kind];
 
 export const Contacts: React.FC = () => {
   const startContactsInfo = useSelector(selectors.loadedContactsInfo);
@@ -59,12 +61,12 @@ export const Contacts: React.FC = () => {
                   </h3>
                   <div className="Contacts__text-container">
                     <p className="Contacts__text">
-                      {contact.dialog[0].text}
+                      {contact.dialog[contact.dialog.length - 1].text}
                     </p>
                   </div>
                 </div>
                 <p className="Contacts__date">
-                  {contact.dialog[0].time}
+                  {moment(`${contact.dialog[contact.dialog.length - 1].time}`, 'M/DD/YY HH:mm a').format('MMM DD, YYYY')}
                 </p>
               </div>
             </button>

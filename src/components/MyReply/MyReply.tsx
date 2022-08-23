@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 import './MyReply.scss';
 
@@ -18,7 +19,7 @@ export const MyReply: React.FC<Props> = ({
         </p>
       </div>
       <p className="MyReply__time">
-        {myTime}
+        {moment(`${myTime}`, 'M/DD/YY HH:mm:ss A').format('M/DD/YY HH:mm A')}
       </p>
     </div>
   );

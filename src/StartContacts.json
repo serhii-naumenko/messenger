@@ -7,7 +7,7 @@
         {
             "isAnswer": true,
             "text": "You are the worst!",
-            "time": "Jun 12 2017"
+            "time": "6/12/17 03:00 PM"
         }
       ],
       "isActive": false,
@@ -45,7 +45,7 @@
         {
             "isAnswer": true,
             "text": "We are losing money! Quick!",
-            "time": "4/22/17 04:25 AM"
+            "time": "4/23/17 04:25 AM"
         }
       ],
       "isActive": true,
@@ -58,7 +58,7 @@
         {
             "isAnswer": true,
             "text": "Quickly come to the meeting room 1B, we have a big server issue",
-            "time": "Mar 18, 2017"
+            "time": "3/18/17 10:00 AM"
         }
       ],
       "isActive": false,
@@ -71,11 +71,24 @@
         {
             "isAnswer": true,
             "text": "You are the worst!",
-            "time": "Feb 18, 2017"
+            "time": "2/18/17 11:00 AM"
         }
       ],
       "isActive": false,
       "picture": "~/images/barrera.png"
+    },
+    {
+      "id": "5",
+      "name": "Kind",
+      "dialog":[
+        {
+            "isAnswer": true,
+            "text": "You are the best!",
+            "time": "2/18/17 11:05 AM"
+        }
+      ],
+      "isActive": false,
+      "picture": "~/images/kind.png"
     }
   ]
 }

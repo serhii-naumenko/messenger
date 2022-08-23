@@ -1,8 +1,7 @@
 @import '../../styles/index.scss';
 
 .Chat {
-  // height: calc($vh - 165px);
-  height: $height-chat-comp;
+  height: calc(100vh - #{$height-subscriber-comp} - #{$height-message-comp} - 1px);
   padding: 20px;
   overflow: hidden;
   overflow-y: scroll;
