@@ -11,7 +11,7 @@
         }
       ],
       "isActive": false,
-      "picture": "~/src/images/alice.png"
+      "picture": "assets/images/alice.png"
     },
     {
       "id": "2",
@@ -49,7 +49,7 @@
         }
       ],
       "isActive": true,
-      "picture": "~/images/josefina.png"
+      "picture": "assets/images/josefina.png"
     },
     {
       "id": "3",
@@ -62,7 +62,7 @@
         }
       ],
       "isActive": false,
-      "picture": "~/images/velazgques.png"
+      "picture": "assets/images/velazgquez.png"
     },
     {
       "id": "4",
@@ -75,7 +75,7 @@
         }
       ],
       "isActive": false,
-      "picture": "~/images/barrera.png"
+      "picture": "assets/images/barrera.png"
     },
     {
       "id": "5",
@@ -88,7 +88,7 @@
         }
       ],
       "isActive": false,
-      "picture": "~/images/kind.png"
+      "picture": "assets/images/kind.png"
     }
   ]
 }

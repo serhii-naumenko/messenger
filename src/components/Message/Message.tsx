@@ -2,6 +2,7 @@ import moment from 'moment';
 import React, { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAnswerFromChack } from '../../api/api';
+import { OneContactInfo } from '../../OneContactInfoType';
 import {
   selectors,
   setAnswerFromChack,
@@ -12,7 +13,7 @@ import './Message.scss';
 
 export const Message: React.FC = () => {
   const [query, setQuery] = useState('');
-  // const [answer, setAnswer] = useState('');
+  const [answer, setAnswer] = useState('');
   const contactsInfo = useSelector(selectors.loadedContactsInfo);
   const chosenContactRedux = useSelector(selectors.chosenContact);
   const dispatch = useDispatch();
@@ -21,14 +22,44 @@ export const Message: React.FC = () => {
     setQuery(newQuery);
   }, [query]);
 
-  async function response() {
+  const getAnswer = useCallback((contactToUpdate, nextAnswer) => {
+    const allContactsRedux = [...contactsInfo];
+
+    setTimeout(() => {
+      // eslint-disable-next-line no-console
+      console.log(answer);
+      const updatedChosenContact2 = {
+        ...contactToUpdate,
+        dialog: [
+          ...contactToUpdate.dialog,
+          {
+            isAnswer: true,
+            text: nextAnswer,
+            time: moment().format('M/DD/YY HH:mm:ss A'),
+          },
+        ],
+      };
+
+      const newContactsInfo2 = [
+        updatedChosenContact2,
+        ...allContactsRedux.filter((contact) => contactToUpdate.id !== contact.id),
+      ];
+
+      dispatch(setchosenContact(updatedChosenContact2));
+      dispatch(setcontactsInfo(newContactsInfo2));
+      localStorage.setItem('contacts', JSON.stringify(newContactsInfo2));
+    }, 10000);
+  }, [contactsInfo, chosenContactRedux, answer]);
+
+  async function response(updatedChosenContact: OneContactInfo) {
     const answerChackServer = await getAnswerFromChack();
     const answerFromChack = {
       ...answerChackServer,
     };
 
-    // setAnswer(answerFromChack.value);
-    dispatch(setAnswerFromChack(answerFromChack));
+    setAnswer(answerFromChack.value);
+    dispatch(setAnswerFromChack(answerFromChack.value));
+    getAnswer(updatedChosenContact, answerFromChack.value);
   }
 
   const handlerSubmit = useCallback((event) => {
@@ -38,7 +69,6 @@ export const Message: React.FC = () => {
     const allContactsRedux = [...contactsInfo];
 
     if (myMessage.trim().length > 0) {
-      response();
       const updatedChosenContact = {
         ...oneContactRedux,
         dialog: [
@@ -51,6 +81,8 @@ export const Message: React.FC = () => {
         ],
       };
 
+      response(updatedChosenContact);
+
       const newContactsInfo = [
         updatedChosenContact,
         ...allContactsRedux.filter((contact) => oneContactRedux.id !== contact.id),
@@ -59,6 +91,7 @@ export const Message: React.FC = () => {
       dispatch(setchosenContact(updatedChosenContact));
       dispatch(setcontactsInfo(newContactsInfo));
       setQuery('');
+      localStorage.setItem('contacts', JSON.stringify(newContactsInfo));
 
       // eslint-disable-next-line no-console
       console.log(newContactsInfo);

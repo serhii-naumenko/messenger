@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import './MyInfo.scss';
 import { useDispatch } from 'react-redux';
-import myFace from '../../images/testimonial-ava-3.jpg';
 import { PhotoCheck } from '../PhotoCheck';
 import { setQueryForSearch } from '../../redux/reducer';
 
@@ -17,7 +16,7 @@ export const MyInfo: React.FC = () => {
   return (
     <div className="MyInfo">
       <div className="MyInfo__container">
-        <PhotoCheck imageFace={myFace} />
+        <PhotoCheck imageFace="assets/images/testimonial-ava-3.jpg" />
       </div>
       <label htmlFor="search" className="MyInfo__search-groupe">
         <input

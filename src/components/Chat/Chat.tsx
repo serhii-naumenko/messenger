@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { AnswerFrom } from '../AnswerFrom';
 import { MyReply } from '../MyReply';
 import './Chat.scss';
 import { selectors } from '../../redux/reducer';
 
-import Josefina from '../../images/josefina.png';
-
 export const Chat: React.FC = () => {
   const chosenContactRedux = useSelector(selectors.chosenContact);
   const [chosenContact, setchosenContact] = useState(chosenContactRedux);
+  const bottomRef = useRef<null | HTMLDivElement>(null);
+
+  useEffect(() => {
+    // 👇️ scroll to bottom every time messages change
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [chosenContactRedux]);
 
   useEffect(() => {
     const contact = chosenContactRedux;
@@ -26,7 +30,7 @@ export const Chat: React.FC = () => {
         >
           {message.isAnswer && (
             <AnswerFrom
-              photoOfСompanion={Josefina}
+              photoOfСompanion={chosenContactRedux.picture}
               textCompanion={chosenContact.dialog[index].text}
               dateCompanion={chosenContact.dialog[index].time}
             />
@@ -37,6 +41,7 @@ export const Chat: React.FC = () => {
               myTime={chosenContact.dialog[index].time}
             />
           )}
+          <div ref={bottomRef} />
         </li>
       ))}
     </ul>

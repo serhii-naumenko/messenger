@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Subscriber.scss';
 import { useSelector } from 'react-redux';
-import Josefina from '../../images/josefina.png';
 import { PhotoCheck } from '../PhotoCheck';
 import { selectors } from '../../redux/reducer';
 
@@ -17,7 +16,7 @@ export const Subscriber: React.FC = () => {
 
   return (
     <div className="Subscriber">
-      <PhotoCheck imageFace={Josefina} />
+      <PhotoCheck imageFace={chosenContact.picture} />
       <h2 className="Subscriber__name">
         {chosenContact.name}
       </h2>

@@ -3,14 +3,7 @@ import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { PhotoCheck } from '../PhotoCheck';
 import './Contacts.scss';
-import alice from '../../images/alice.png';
-import josefina from '../../images/josefina.png';
-import velazgquez from '../../images/velazgquez.png';
-import borrera from '../../images/barrera.png';
-import kind from '../../images/kind.png';
 import { selectors, setchosenContact } from '../../redux/reducer';
-
-const startPictures = [alice, josefina, velazgquez, borrera, kind];
 
 export const Contacts: React.FC = () => {
   const startContactsInfo = useSelector(selectors.loadedContactsInfo);
@@ -24,7 +17,7 @@ export const Contacts: React.FC = () => {
       .toUpperCase().includes(query.toUpperCase()));
 
     setContactsToRender(visibleContacts);
-  }, [querySearch]);
+  }, [querySearch, startContactsInfo]);
 
   const handlerChoseContact = useCallback((index) => {
     const previousContactsInfo = startContactsInfo;
@@ -34,6 +27,7 @@ export const Contacts: React.FC = () => {
 
     if (contactForDialog) {
       dispatch(setchosenContact(contactForDialog));
+      localStorage.setItem('chosenContact', JSON.stringify(contactForDialog));
     }
   }, [startContactsInfo]);
 
@@ -53,7 +47,7 @@ export const Contacts: React.FC = () => {
               className="Contacts__button"
               onClick={() => handlerChoseContact(+contact.id)}
             >
-              <PhotoCheck imageFace={startPictures[+contact.id - 1]} />
+              <PhotoCheck imageFace={contact.picture} />
               <div className="Contacts__info">
                 <div className="Contacts__name-text">
                   <h3 className="Contacts__name">

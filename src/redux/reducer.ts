@@ -9,6 +9,13 @@ if (contactsInfoFromStorage !== null) {
   contactsStart = JSON.parse(contactsInfoFromStorage);
 }
 
+const chosenContactFromStorage = localStorage.getItem('chosenContact');
+let oneContactStart: OneContactInfo = startContactsInfo[0];
+
+if (chosenContactFromStorage !== null) {
+  oneContactStart = JSON.parse(chosenContactFromStorage);
+}
+
 interface InitialState {
   contactsInfo: OneContactInfo[],
   chosenContact: OneContactInfo,
@@ -18,7 +25,7 @@ interface InitialState {
 
 const initialState: InitialState = {
   contactsInfo: [...contactsStart],
-  chosenContact: startContactsInfo[0],
+  chosenContact: oneContactStart,
   queryForSearch: '',
   answerFromChack: '',
 };
