@@ -1,23 +1,20 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.scss';
-import { Chat } from './components/Chat';
-import { Contacts } from './components/Contacts';
-import { Message } from './components/Message';
-import { MyInfo } from './components/MyInfo';
-import { Subscriber } from './components/Subscriber';
+import { LoginPage } from './pages/LoginPage';
+import { Messenger } from './pages/Messenger';
+import { NotFound } from './pages/NotFound';
+import { RegisterPage } from './pages/RegisterPage';
 
 export const App: React.FC = () => {
   return (
     <div className="App">
-      <div className="App__contact-groupe">
-        <MyInfo />
-        <Contacts />
-      </div>
-      <div className="App__chat-groupe">
-        <Subscriber />
-        <Chat />
-        <Message />
-      </div>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/messenger" element={<Messenger />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 };

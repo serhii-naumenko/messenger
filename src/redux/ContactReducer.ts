@@ -21,6 +21,11 @@ interface InitialState {
   chosenContact: OneContactInfo,
   queryForSearch: string,
   answerFromChack: string,
+  user: {
+    email: string | null,
+    token: string | null,
+    id: string | null,
+  }
 }
 
 const initialState: InitialState = {
@@ -28,10 +33,15 @@ const initialState: InitialState = {
   chosenContact: oneContactStart,
   queryForSearch: '',
   answerFromChack: '',
+  user: {
+    email: null,
+    token: null,
+    id: null,
+  },
 };
 
-const occasionReducer = createSlice({
-  name: 'contactInao',
+const contactReducer = createSlice({
+  name: 'contactInfo',
   initialState,
   reducers: {
     setcontactsInfo: (state, action) => {
@@ -58,6 +68,22 @@ const occasionReducer = createSlice({
         answerFromChack: action.payload,
       };
     },
+    setUser: (state, action) => {
+      return {
+        ...state,
+        user: action.payload,
+      };
+    },
+    removeUser: (state) => {
+      return {
+        ...state,
+        user: {
+          email: null,
+          token: null,
+          id: null,
+        },
+      };
+    },
   },
 });
 
@@ -66,6 +92,7 @@ export const selectors = {
   chosenContact: (state: InitialState) => state.chosenContact,
   queryForSearch: (state: InitialState) => state.queryForSearch,
   answerFromChack: (state: InitialState) => state.answerFromChack,
+  getUser: (state: InitialState) => state.user,
 };
 
 export const {
@@ -73,6 +100,8 @@ export const {
   setchosenContact,
   setQueryForSearch,
   setAnswerFromChack,
-} = occasionReducer.actions;
+  setUser,
+  removeUser,
+} = contactReducer.actions;
 
-export const { reducer } = occasionReducer;
+export const { reducer } = contactReducer;

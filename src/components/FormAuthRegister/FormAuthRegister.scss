@@ -1,0 +1,13 @@
+.FormAuthRegister {
+  color: red;
+
+  &__button {
+
+    &:hover {
+      background-color: blueviolet;
+    }
+    &:active {
+      background-color: aquamarine;
+    }
+  }
+}

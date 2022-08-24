@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import './MyInfo.scss';
 import { useDispatch } from 'react-redux';
 import { PhotoCheck } from '../PhotoCheck';
-import { setQueryForSearch } from '../../redux/reducer';
+import { setQueryForSearch } from '../../redux/ContactReducer';
 
 export const MyInfo: React.FC = () => {
   const dispatch = useDispatch();

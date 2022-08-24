@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Subscriber.scss';
 import { useSelector } from 'react-redux';
 import { PhotoCheck } from '../PhotoCheck';
-import { selectors } from '../../redux/reducer';
+import { selectors } from '../../redux/ContactReducer';
 
 export const Subscriber: React.FC = () => {
   const chosenContactRedux = useSelector(selectors.chosenContact);

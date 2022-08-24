@@ -8,10 +8,10 @@ import {
   setAnswerFromChack,
   setchosenContact,
   setcontactsInfo,
-} from '../../redux/reducer';
-import './Message.scss';
+} from '../../redux/ContactReducer';
+import './Sender.scss';
 
-export const Message: React.FC = () => {
+export const Sender: React.FC = () => {
   const [query, setQuery] = useState('');
   const [answer, setAnswer] = useState('');
   const contactsInfo = useSelector(selectors.loadedContactsInfo);
@@ -99,26 +99,26 @@ export const Message: React.FC = () => {
   }, [contactsInfo, chosenContactRedux]);
 
   return (
-    <div className="Message">
+    <div className="Sender">
       <form
-        className="Message__form"
+        className="Sender__form"
         onSubmit={(event) => handlerSubmit(event)}
       >
         <input
           title="enter text of message"
-          name="message"
+          name="sender"
           type="text"
-          className="Message__input"
+          className="Sender__input"
           placeholder="Type your message"
           value={query}
           onChange={(event) => handlerChangeInput(event.target.value)}
         />
         <button
-          className="Message__button"
+          className="Sender__button"
           title="send message"
           type="submit"
         >
-          <div className="Message__icon"></div>
+          <div className="Sender__icon"></div>
         </button>
       </form>
     </div>

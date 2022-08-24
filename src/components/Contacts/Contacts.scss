@@ -25,6 +25,11 @@
     padding: 20px;
     background-color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: antiquewhite;
+    }
   }
 
   &__info {

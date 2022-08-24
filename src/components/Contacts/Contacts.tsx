@@ -3,7 +3,7 @@ import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { PhotoCheck } from '../PhotoCheck';
 import './Contacts.scss';
-import { selectors, setchosenContact } from '../../redux/reducer';
+import { selectors, setchosenContact } from '../../redux/ContactReducer';
 
 export const Contacts: React.FC = () => {
   const startContactsInfo = useSelector(selectors.loadedContactsInfo);

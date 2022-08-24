@@ -3,17 +3,17 @@ import { useSelector } from 'react-redux';
 import { AnswerFrom } from '../AnswerFrom';
 import { MyReply } from '../MyReply';
 import './Chat.scss';
-import { selectors } from '../../redux/reducer';
+import { selectors } from '../../redux/ContactReducer';
 
 export const Chat: React.FC = () => {
   const chosenContactRedux = useSelector(selectors.chosenContact);
   const [chosenContact, setchosenContact] = useState(chosenContactRedux);
-  const bottomRef = useRef<null | HTMLDivElement>(null);
+  const bottomRef = useRef<null | HTMLLIElement>(null);
 
   useEffect(() => {
     // 👇️ scroll to bottom every time messages change
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [chosenContactRedux]);
+    bottomRef.current?.scrollIntoView();
+  }, [chosenContactRedux, chosenContact]);
 
   useEffect(() => {
     const contact = chosenContactRedux;
@@ -27,6 +27,7 @@ export const Chat: React.FC = () => {
         <li
           className="Chat__item"
           key={message.time}
+          ref={bottomRef}
         >
           {message.isAnswer && (
             <AnswerFrom
@@ -41,7 +42,6 @@ export const Chat: React.FC = () => {
               myTime={chosenContact.dialog[index].time}
             />
           )}
-          <div ref={bottomRef} />
         </li>
       ))}
     </ul>

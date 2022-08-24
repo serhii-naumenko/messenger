@@ -1,6 +1,6 @@
 @import '../../styles/index.scss';
 
-.Message {
+.Sender {
   background-color: $main-background;
   border-top: 1px solid $color-board-separator;
   padding: 0 20px;
@@ -20,6 +20,7 @@
     padding-right: 74px;
     line-height: 40px;
     border-radius: 15px;
+    cursor: pointer;
     
     &:-webkit-autofill,
     input:-webkit-autofill:hover,
@@ -49,5 +50,10 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }
