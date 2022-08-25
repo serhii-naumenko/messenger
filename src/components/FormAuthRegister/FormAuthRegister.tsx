@@ -23,22 +23,28 @@ export const FormAuthRegister: React.FC<Props> = ({
 
   return (
     <div className="FormAuthRegister">
-      <input
-        type="email"
-        title="enter email"
-        className="FormAuthRegister__email"
-        placeholder="enter email"
-        value={email}
-        onChange={(event) => handlerChangeEmail(event.target.value)}
-      />
-      <input
-        type="password"
-        title="enter password"
-        className="FormAuthRegister__passw"
-        placeholder="enter password"
-        value={passw}
-        onChange={(event) => handlerChangePassw(event.target.value)}
-      />
+      <div className="FormAuthRegister__input-groupe">
+        <input
+          type="email"
+          title="enter email"
+          className="FormAuthRegister__input
+          FormAuthRegister__input--email"
+          placeholder="enter email"
+          size={30}
+          value={email}
+          onChange={(event) => handlerChangeEmail(event.target.value)}
+        />
+        <input
+          type="password"
+          title="enter password"
+          className="FormAuthRegister__input
+          FormAuthRegister__input--passw"
+          placeholder="enter password"
+          size={30}
+          value={passw}
+          onChange={(event) => handlerChangePassw(event.target.value)}
+        />
+      </div>
       <button
         type="button"
         className="FormAuthRegister__button"

@@ -8,6 +8,5 @@ export interface OneContactInfo {
   id: string,
   name: string,
   dialog: OnePhrase[],
-  isActive: boolean,
   picture: string,
 }

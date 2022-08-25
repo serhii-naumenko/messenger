@@ -1,8 +1,24 @@
 .RegisterPage {
+  padding: 40px;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 20px;
+    color: rgb(0, 106, 255);
+    font-size: 45px;
+  }
 
   &__text {
-    display: inline;
-    margin-right: 5px;
+    font-size: 25px;
+    font-weight: bolder;
+  }
 
+  &__link {
+    font-size: 45px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: blue;
+    }
   }
 }

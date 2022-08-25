@@ -15,8 +15,6 @@ export const RegisterPage: React.FC = () => {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        // eslint-disable-next-line no-console
-        console.log(user);
         dispatch(setUser({
           email: user.email,
           id: user.uid,

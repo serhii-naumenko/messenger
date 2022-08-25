@@ -10,7 +10,6 @@
             "time": "6/12/17 03:00 PM"
         }
       ],
-      "isActive": false,
       "picture": "assets/images/alice.png"
     },
     {
@@ -31,24 +30,8 @@
             "isAnswer": true,
             "text": "We are losing money! Quick!",
             "time": "4/22/17 04:10 AM"
-        },
-        {
-            "isAnswer": true,
-            "text": "Quickly come to the meeting room 1B, we have a big server issue.",
-            "time": "4/22/17 04:15 AM"
-        },
-        {
-            "isAnswer": false,
-            "text": "I'm having breakfast right now, can't you wait for 10 minutes?",
-            "time": "4/22/17 04:20 AM"
-        },
-        {
-            "isAnswer": true,
-            "text": "We are losing money! Quick!",
-            "time": "4/23/17 04:25 AM"
         }
       ],
-      "isActive": true,
       "picture": "assets/images/josefina.png"
     },
     {
@@ -61,7 +44,6 @@
             "time": "3/18/17 10:00 AM"
         }
       ],
-      "isActive": false,
       "picture": "assets/images/velazgquez.png"
     },
     {
@@ -74,7 +56,6 @@
             "time": "2/18/17 11:00 AM"
         }
       ],
-      "isActive": false,
       "picture": "assets/images/barrera.png"
     },
     {
@@ -87,7 +68,6 @@
             "time": "2/18/17 11:05 AM"
         }
       ],
-      "isActive": false,
       "picture": "assets/images/kind.png"
     }
   ]

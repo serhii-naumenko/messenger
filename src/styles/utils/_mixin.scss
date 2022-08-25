@@ -1,5 +1,5 @@
-// @mixin screen1024 {
-//   @media (min-width: 1024px) {
-//     @content;
-//   }
-// }
+@mixin screen800 {
+  @media (min-width: 800px) {
+    @content;
+  }
+}
