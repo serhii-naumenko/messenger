@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/messenger/static/css/main.13037f9c.chunk.css",
-    "main.js": "/messenger/static/js/main.c04ee7b9.chunk.js",
-    "main.js.map": "/messenger/static/js/main.c04ee7b9.chunk.js.map",
-    "runtime-main.js": "/messenger/static/js/runtime-main.586e25f0.js",
-    "runtime-main.js.map": "/messenger/static/js/runtime-main.586e25f0.js.map",
-    "static/js/2.42fc659e.chunk.js": "/messenger/static/js/2.42fc659e.chunk.js",
-    "static/js/2.42fc659e.chunk.js.map": "/messenger/static/js/2.42fc659e.chunk.js.map",
-    "index.html": "/messenger/index.html",
-    "static/css/main.13037f9c.chunk.css.map": "/messenger/static/css/main.13037f9c.chunk.css.map",
-    "static/js/2.42fc659e.chunk.js.LICENSE.txt": "/messenger/static/js/2.42fc659e.chunk.js.LICENSE.txt",
-    "static/media/MyInfo.scss": "/messenger/static/media/Search.0559fc54.svg",
-    "static/media/PhotoCheck.scss": "/messenger/static/media/check-mark.267e0ad0.png",
-    "static/media/google_icon.817fc47e.png": "/messenger/static/media/google_icon.817fc47e.png",
-    "static/media/left_arrow.abe14890.png": "/messenger/static/media/left_arrow.abe14890.png"
+    "main.css": "./static/css/main.fd99fcf9.chunk.css",
+    "main.js": "./static/js/main.a0b5ac1b.chunk.js",
+    "main.js.map": "./static/js/main.a0b5ac1b.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.8c9895b1.js",
+    "runtime-main.js.map": "./static/js/runtime-main.8c9895b1.js.map",
+    "static/js/2.42fc659e.chunk.js": "./static/js/2.42fc659e.chunk.js",
+    "static/js/2.42fc659e.chunk.js.map": "./static/js/2.42fc659e.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.fd99fcf9.chunk.css.map": "./static/css/main.fd99fcf9.chunk.css.map",
+    "static/js/2.42fc659e.chunk.js.LICENSE.txt": "./static/js/2.42fc659e.chunk.js.LICENSE.txt",
+    "static/media/MyInfo.scss": "./static/media/Search.0559fc54.svg",
+    "static/media/PhotoCheck.scss": "./static/media/check-mark.267e0ad0.png",
+    "static/media/google_icon.817fc47e.png": "./static/media/google_icon.817fc47e.png",
+    "static/media/left_arrow.abe14890.png": "./static/media/left_arrow.abe14890.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.586e25f0.js",
+    "static/js/runtime-main.8c9895b1.js",
     "static/js/2.42fc659e.chunk.js",
-    "static/css/main.13037f9c.chunk.css",
-    "static/js/main.c04ee7b9.chunk.js"
+    "static/css/main.fd99fcf9.chunk.css",
+    "static/js/main.a0b5ac1b.chunk.js"
   ]
 }
