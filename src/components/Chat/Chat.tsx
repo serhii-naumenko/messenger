@@ -11,7 +11,6 @@ export const Chat: React.FC = () => {
   const bottomRef = useRef<null | HTMLLIElement>(null);
 
   useEffect(() => {
-    // 👇️ scroll to bottom every time messages change
     bottomRef.current?.scrollIntoView();
   }, [chosenContactRedux, chosenContact]);
 

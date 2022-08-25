@@ -18,6 +18,10 @@
   &__item {
     border-bottom: 2px solid $color-board-separator;
   }
+
+  &__link {
+    text-decoration: none;
+  }
   
   &__button {
     width: 100%;

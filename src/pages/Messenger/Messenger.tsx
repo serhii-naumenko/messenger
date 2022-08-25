@@ -6,6 +6,7 @@ import { Contacts } from '../../components/Contacts';
 import { MyInfo } from '../../components/MyInfo';
 import { Sender } from '../../components/Sender';
 import { Subscriber } from '../../components/Subscriber';
+import { ReturnContacts } from '../../components/ReturnContacts';
 import { useAuth } from '../../hooks/use-auth';
 
 export const Messenger: React.FC = () => {
@@ -13,11 +14,18 @@ export const Messenger: React.FC = () => {
 
   return isAuth ? (
     <div className="Messenger">
-      <div className="Messenger__contact-groupe">
+      <div
+        className="Messenger__contact-groupe"
+        id="contactsColumn"
+      >
         <MyInfo />
         <Contacts />
       </div>
-      <div className="Messenger__chat-groupe">
+      <div
+        className="Messenger__chat-groupe"
+        id="chatColumn"
+      >
+        <ReturnContacts />
         <Subscriber />
         <Chat />
         <Sender />

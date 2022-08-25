@@ -42,28 +42,30 @@ export const Contacts: React.FC = () => {
             className="Contacts__item"
             key={contact.id}
           >
-            <button
-              type="button"
-              className="Contacts__button"
-              onClick={() => handlerChoseContact(+contact.id)}
-            >
-              <PhotoCheck imageFace={contact.picture} />
-              <div className="Contacts__info">
-                <div className="Contacts__name-text">
-                  <h3 className="Contacts__name">
-                    {contact.name}
-                  </h3>
-                  <div className="Contacts__text-container">
-                    <p className="Contacts__text">
-                      {contact.dialog[contact.dialog.length - 1].text}
-                    </p>
+            <a href="#chatColumn" className="Contacts__link">
+              <button
+                type="button"
+                className="Contacts__button"
+                onClick={() => handlerChoseContact(+contact.id)}
+              >
+                <PhotoCheck imageFace={contact.picture} />
+                <div className="Contacts__info">
+                  <div className="Contacts__name-text">
+                    <h3 className="Contacts__name">
+                      {contact.name}
+                    </h3>
+                    <div className="Contacts__text-container">
+                      <p className="Contacts__text">
+                        {contact.dialog[contact.dialog.length - 1].text}
+                      </p>
+                    </div>
                   </div>
+                  <p className="Contacts__date">
+                    {moment(`${contact.dialog[contact.dialog.length - 1].time}`, 'M/DD/YY HH:mm a').format('MMM DD, YYYY')}
+                  </p>
                 </div>
-                <p className="Contacts__date">
-                  {moment(`${contact.dialog[contact.dialog.length - 1].time}`, 'M/DD/YY HH:mm a').format('MMM DD, YYYY')}
-                </p>
-              </div>
-            </button>
+              </button>
+            </a>
           </li>
         ))}
       </ul>
