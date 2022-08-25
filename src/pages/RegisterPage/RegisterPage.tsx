@@ -21,7 +21,7 @@ export const RegisterPage: React.FC = () => {
           id: user.uid,
           token: user.refreshToken,
         }));
-        navigate('/messenger');
+        navigate(`${process.env.PUBLIC_URL}/messenger`);
       })
       .catch((Error) => {
         if (Error.message.includes('weak-password')) {
@@ -48,7 +48,7 @@ export const RegisterPage: React.FC = () => {
         Already have an account?
       </p>
       <Link
-        to="/"
+        to={`${process.env.PUBLIC_URL}/`}
         className="RegisterPage__link"
       >
         Sign in

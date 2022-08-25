@@ -14,10 +14,6 @@ export const App: React.FC = () => {
         <Route path={`${process.env.PUBLIC_URL}/messenger`} element={<Messenger />} />
         <Route path={`${process.env.PUBLIC_URL}/register`} element={<RegisterPage />} />
         <Route path={`${process.env.PUBLIC_URL}*`} element={<NotFound />} />
-        {/* <Route path="/" element={<LoginPage />} />
-        <Route path="/messenger" element={<Messenger />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </div>
   );

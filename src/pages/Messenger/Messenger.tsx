@@ -32,6 +32,6 @@ export const Messenger: React.FC = () => {
       </div>
     </div>
   ) : (
-    <Navigate to="/" />
+    <Navigate to={`${process.env.PUBLIC_URL}/`} />
   );
 };

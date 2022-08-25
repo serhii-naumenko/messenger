@@ -27,7 +27,7 @@ export const LoginPage: React.FC = () => {
           id: user.uid,
           token: user.refreshToken,
         }));
-        navigate('/messenger');
+        navigate(`${process.env.PUBLIC_URL}/messenger`);
       })
       .catch((Error) => {
         if (Error.message.includes('auth')) {
@@ -49,7 +49,7 @@ export const LoginPage: React.FC = () => {
           id: user.uid,
           token: user.refreshToken,
         }));
-        navigate('/messenger');
+        navigate(`${process.env.PUBLIC_URL}/messenger`);
       })
 
       .catch((Error) => {
@@ -86,7 +86,7 @@ export const LoginPage: React.FC = () => {
         Login with google
       </button>
       <Link
-        to="/register"
+        to={`${process.env.PUBLIC_URL}/register`}
         className="LoginPage__link"
       >
         or sign up
