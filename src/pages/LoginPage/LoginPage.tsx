@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -13,6 +13,7 @@ import { setUser } from '../../redux/ContactReducer';
 import googleIcon from '../../images/google_icon.png';
 
 export const LoginPage: React.FC = () => {
+  const [textError, setTextError] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -28,8 +29,13 @@ export const LoginPage: React.FC = () => {
         }));
         navigate('/messenger');
       })
-      // eslint-disable-next-line no-console, no-alert
-      .catch(() => alert('Your login or password is incorrect'));
+      .catch((Error) => {
+        if (Error.message.includes('auth')) {
+          setTextError('Please enter the correct email and password');
+        } else {
+          throw Error;
+        }
+      });
   };
 
   const handlerGoogle = () => {
@@ -45,8 +51,14 @@ export const LoginPage: React.FC = () => {
         }));
         navigate('/messenger');
       })
-      // eslint-disable-next-line no-console, no-alert
-      .catch(() => alert('Your login or password is incorrect'));
+
+      .catch((Error) => {
+        if (Error.message.includes('auth')) {
+          setTextError('Something went wrong. Try again.');
+        } else {
+          throw Error;
+        }
+      });
   };
 
   return (
@@ -58,6 +70,7 @@ export const LoginPage: React.FC = () => {
       </h1>
       <FormAuthRegister
         title="sign in"
+        textError={textError}
         handlerClick={handlerLogin}
       />
       <button

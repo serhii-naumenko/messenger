@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -7,6 +7,7 @@ import { FormAuthRegister } from '../../components/FormAuthRegister';
 import { setUser } from '../../redux/ContactReducer';
 
 export const RegisterPage: React.FC = () => {
+  const [textError, setTextError] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -22,8 +23,15 @@ export const RegisterPage: React.FC = () => {
         }));
         navigate('/messenger');
       })
-      // eslint-disable-next-line no-console
-      .catch(console.error);
+      .catch((Error) => {
+        if (Error.message.includes('weak-password')) {
+          setTextError('Password must have at least 6 characters');
+        } else if (Error.message.includes('auth')) {
+          setTextError('Please enter the correct email and password');
+        } else {
+          throw Error;
+        }
+      });
   };
 
   return (
@@ -33,6 +41,7 @@ export const RegisterPage: React.FC = () => {
       </h1>
       <FormAuthRegister
         title="register"
+        textError={textError}
         handlerClick={handlerRegister}
       />
       <p className="RegisterPage__text">

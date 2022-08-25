@@ -3,11 +3,13 @@ import './FormAuthRegister.scss';
 
 type Props = {
   title: string,
+  textError: string,
   handlerClick: (email: string, passw: string) => void,
 };
 
 export const FormAuthRegister: React.FC<Props> = ({
   title,
+  textError,
   handlerClick,
 }) => {
   const [email, setEmail] = useState('');
@@ -23,6 +25,9 @@ export const FormAuthRegister: React.FC<Props> = ({
 
   return (
     <div className="FormAuthRegister">
+      <p className="FormAuthRegister__textError">
+        {textError}
+      </p>
       <div className="FormAuthRegister__input-groupe">
         <input
           type="email"
