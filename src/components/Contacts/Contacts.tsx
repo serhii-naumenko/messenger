@@ -1,4 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { PhotoCheck } from '../PhotoCheck';
@@ -42,7 +46,10 @@ export const Contacts: React.FC = () => {
             className="Contacts__item"
             key={contact.id}
           >
-            <a href="#chatColumn" className="Contacts__link">
+            <a
+              href="#chatColumn"
+              className="Contacts__link"
+            >
               <button
                 type="button"
                 className="Contacts__button"

@@ -22,11 +22,14 @@ export const LoginPage: React.FC = () => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        dispatch(setUser({
+        const newUser = {
           email: user.email,
           id: user.uid,
           token: user.refreshToken,
-        }));
+        };
+
+        dispatch(setUser(newUser));
+        localStorage.setItem('user', JSON.stringify(newUser));
         navigate(`${process.env.PUBLIC_URL}/messenger`);
       })
       .catch((Error) => {
@@ -44,14 +47,16 @@ export const LoginPage: React.FC = () => {
 
     signInWithPopup(auth, provider)
       .then(({ user }) => {
-        dispatch(setUser({
+        const newUser = {
           email: user.email,
           id: user.uid,
           token: user.refreshToken,
-        }));
+        };
+
+        dispatch(setUser(newUser));
+        localStorage.setItem('user', JSON.stringify(newUser));
         navigate(`${process.env.PUBLIC_URL}/messenger`);
       })
-
       .catch((Error) => {
         if (Error.message.includes('auth')) {
           setTextError('Something went wrong. Try again.');

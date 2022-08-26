@@ -9,6 +9,17 @@ if (contactsInfoFromStorage !== null) {
   contactsStart = JSON.parse(contactsInfoFromStorage);
 }
 
+const startUser = localStorage.getItem('user');
+let lastuser = {
+  email: null,
+  token: null,
+  id: null,
+};
+
+if (startUser !== null) {
+  lastuser = JSON.parse(startUser);
+}
+
 const chosenContactFromStorage = localStorage.getItem('chosenContact');
 let oneContactStart: OneContactInfo = startContactsInfo[0];
 
@@ -33,11 +44,7 @@ const initialState: InitialState = {
   chosenContact: oneContactStart,
   queryForSearch: '',
   answerFromChack: '',
-  user: {
-    email: null,
-    token: null,
-    id: null,
-  },
+  user: lastuser,
 };
 
 const contactReducer = createSlice({
