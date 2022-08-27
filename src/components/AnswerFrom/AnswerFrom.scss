@@ -10,10 +10,11 @@
 
   &__text-container {
     width: 70%;
-    border-radius: 20px;
-    background-color: black;
     padding: 10px 15px;
     margin-left: 20px;
+
+    border-radius: 20px;
+    background-color: black;
   }
   
   &__text {
@@ -22,8 +23,8 @@
   }
 
   &__date {
-    text-align: left;
     margin-left: 78px;
+    text-align: left;
     font-size: 15px;
   }
 }

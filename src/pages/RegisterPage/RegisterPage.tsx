@@ -24,7 +24,7 @@ export const RegisterPage: React.FC = () => {
 
         dispatch(setUser(newUser));
         localStorage.setItem('user', JSON.stringify(newUser));
-        navigate(`${process.env.PUBLIC_URL}/messenger`);
+        navigate('/messenger');
       })
       .catch((Error) => {
         if (Error.message.includes('weak-password')) {
@@ -51,7 +51,7 @@ export const RegisterPage: React.FC = () => {
         Already have an account?
       </p>
       <Link
-        to={`${process.env.PUBLIC_URL}/`}
+        to="/"
         className="RegisterPage__link"
       >
         Sign in

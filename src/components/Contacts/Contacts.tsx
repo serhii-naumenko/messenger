@@ -5,6 +5,7 @@ import React, {
 } from 'react';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { PhotoCheck } from '../PhotoCheck';
 import './Contacts.scss';
 import { selectors, setchosenContact } from '../../redux/ContactReducer';
@@ -46,8 +47,8 @@ export const Contacts: React.FC = () => {
             className="Contacts__item"
             key={contact.id}
           >
-            <a
-              href="#chatColumn"
+            <Link
+              to="/messenger"
               className="Contacts__link"
             >
               <button
@@ -72,7 +73,7 @@ export const Contacts: React.FC = () => {
                   </p>
                 </div>
               </button>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

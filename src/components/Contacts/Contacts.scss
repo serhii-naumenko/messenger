@@ -4,9 +4,10 @@
 
   &__title {
     height: $height-title-contacts;
-    font-size: 25px;
-    color: rgb(0, 221, 255);
     padding: 20px;
+
+    font-size: 25px;
+    color: $color_title-contacts;
   }
 
   &__list {
@@ -25,8 +26,10 @@
   
   &__button {
     width: 100%;
-    display: flex;
     padding: 20px;
+
+    display: flex;
+
     background-color: #fff;
     transition: background-color 0.3s;
 
@@ -38,6 +41,7 @@
   &__info {
     width: 100%;
     margin-left: 10px;
+
     display: flex;
     justify-content: space-between;
   }
@@ -48,7 +52,7 @@
 
   &__name {
     text-align: left;
-    color:rgba(26, 24, 24, 0.8)
+    color: $color-text-contacts;
   }
 
   &__text-container {
@@ -63,14 +67,13 @@
 
   &__text {
     margin: 0;
+
     font-size: 15px;
     text-align: left;
-    color:$color-board-separator;
+    color: $color-board-separator;
   }
   
   &__date {
-    font-size: 15px;
-    text-align: right;
-    color:rgba(26, 24, 24, 0.8);
+    @extend %date
   }
 }

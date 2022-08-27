@@ -9,7 +9,6 @@ export const ChatColumn: React.FC = () => {
   return (
     <div
       className="ChatColumn"
-      id="chatColumn"
     >
       <ReturnContacts />
       <Subscriber />

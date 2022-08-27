@@ -14,6 +14,6 @@ export const Messenger: React.FC = () => {
       <ChatColumn />
     </div>
   ) : (
-    <Navigate to={`${process.env.PUBLIC_URL}/`} />
+    <Navigate to="/" />
   );
 };

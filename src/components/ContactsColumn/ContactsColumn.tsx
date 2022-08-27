@@ -5,7 +5,7 @@ import './ContactsColumn.scss';
 
 export const ContactsColumn: React.FC = () => {
   return (
-    <div className="ContactsColumn" id="contactsolumn">
+    <div className="ContactsColumn">
       <MyInfo />
       <Contacts />
     </div>

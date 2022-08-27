@@ -1,12 +1,14 @@
 @import '../../styles/index.scss';
 
 .Sender {
-  background-color: $main-background;
-  border-top: 1px solid $color-board-separator;
   padding: 0 20px;
   height: $height-message-comp;
+
   display: flex;
   align-items: center;
+
+  background-color: $main-background;
+  border-top: 1px solid $color-board-separator;
   
   &__form {
     position: relative;
@@ -18,6 +20,7 @@
     width: 100%;
     padding-left: 10px;
     padding-right: 74px;
+
     line-height: 40px;
     border-radius: 15px;
     cursor: pointer;
@@ -25,8 +28,8 @@
     &:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
-    input:-webkit-autofill:active  {
-         box-shadow: 0 0 0 30px #fff inset !important;
+    input:-webkit-autofill:active {
+      box-shadow: 0 0 0 30px #fff inset !important;
     }
 
     &::placeholder {
@@ -38,6 +41,7 @@
     position: absolute;
     right: 10px;
     bottom: 2px;
+
     padding: 8px 10px;
     background-color: white;
   }
@@ -45,10 +49,12 @@
   &__icon {
     width: 20px;
     height: 20px;
+
     background-image: url(../../images/send_arrow.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
     transition: transform 0.3s;
 
     &:hover {

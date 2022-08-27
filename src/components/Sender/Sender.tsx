@@ -26,8 +26,6 @@ export const Sender: React.FC = () => {
     const allContactsRedux = [...contactsInfo];
 
     setTimeout(() => {
-      // eslint-disable-next-line no-console
-      console.log(answer);
       const updatedChosenContact2 = {
         ...contactToUpdate,
         dialog: [
@@ -92,9 +90,6 @@ export const Sender: React.FC = () => {
       dispatch(setcontactsInfo(newContactsInfo));
       setQuery('');
       localStorage.setItem('contacts', JSON.stringify(newContactsInfo));
-
-      // eslint-disable-next-line no-console
-      console.log(newContactsInfo);
     }
   }, [contactsInfo, chosenContactRedux]);
 

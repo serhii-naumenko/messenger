@@ -5,9 +5,9 @@
   padding: 20px;
   overflow: hidden;
   overflow-y: scroll;
-  background-color: rgb(244, 236, 236);
+  background-color: $background-chat;
 
-  @include screen800 {
+  @include screen768 {
     height: calc(100vh - #{$height-subscriber-comp} - #{$height-message-comp} - 1px);
   }
 

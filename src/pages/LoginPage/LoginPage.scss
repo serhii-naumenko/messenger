@@ -4,13 +4,15 @@
 
   &__title {
     margin-bottom: 20px;
-    color: rgb(0, 106, 255);
+
     font-size: 45px;
+    color: rgb(0, 106, 255);
   }
 
   &__link {
-    color: red;
     font-size: 45px;
+    color: red;
+
     transition: color 0.3s;
 
     &:hover {
@@ -19,9 +21,11 @@
   }
 
   &__button {
-    display: flex;
     margin: 0 auto 20px;
     padding: 20px;
+
+    display: flex;
+
     border-radius: 10px;
     transition: all 0.3s;
 

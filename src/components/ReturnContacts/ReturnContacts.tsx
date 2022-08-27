@@ -1,12 +1,13 @@
 import React from 'react';
 import './ReturnContacts.scss';
+import { Link } from 'react-router-dom';
 import leftArrow from '../../images/left_arrow.png';
 
 export const ReturnContacts: React.FC = () => {
   return (
     <div className="ReturnContacts">
-      <a
-        href="#contactsColumn"
+      <Link
+        to="/contactsColumn"
         className="ReturnContacts__link"
       >
         <img
@@ -14,7 +15,7 @@ export const ReturnContacts: React.FC = () => {
           alt="return to contacts sign"
           className="ReturnContacts__arrow"
         />
-      </a>
+      </Link>
     </div>
   );
 };

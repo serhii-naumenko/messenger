@@ -30,7 +30,7 @@ export const LoginPage: React.FC = () => {
 
         dispatch(setUser(newUser));
         localStorage.setItem('user', JSON.stringify(newUser));
-        navigate(`${process.env.PUBLIC_URL}/messenger`);
+        navigate('/messenger');
       })
       .catch((Error) => {
         if (Error.message.includes('auth')) {
@@ -55,7 +55,7 @@ export const LoginPage: React.FC = () => {
 
         dispatch(setUser(newUser));
         localStorage.setItem('user', JSON.stringify(newUser));
-        navigate(`${process.env.PUBLIC_URL}/messenger`);
+        navigate('/messenger');
       })
       .catch((Error) => {
         if (Error.message.includes('auth')) {
@@ -91,12 +91,11 @@ export const LoginPage: React.FC = () => {
         Login with google
       </button>
       <Link
-        to={`${process.env.PUBLIC_URL}/register`}
+        to="/register"
         className="LoginPage__link"
       >
         or sign up
       </Link>
     </div>
-
   );
 };

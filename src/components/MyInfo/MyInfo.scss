@@ -3,18 +3,21 @@
 .MyInfo {
   padding: 20px;
   height: $height-myinfo-comp;
+
   background-color: $main-background;
   border-bottom: 1px solid $color-board-separator;
 
   &__container {
     display: flex;
     justify-content: space-between;
+
     margin-bottom: 20px;
   }
 
   &__button {
     height: 45px;
     width: 35px;
+
     transition: transform 0.3s;
 
     &:hover {
@@ -34,9 +37,10 @@
 
   &__search {
     padding-left: 30px;
-    border-radius: 20px;
     width: 100%;
     line-height: 30px;
+
+    border-radius: 20px;
     cursor: pointer;
 
     &::placeholder {
@@ -49,8 +53,10 @@
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
+
     width: 10px;
     height: 10px;
+
     background-image: url(../../images/Search.svg);
     background-size: cover;
     background-position: center;

@@ -1,12 +1,14 @@
 import React, { useCallback, useState } from 'react';
 import './MyInfo.scss';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { PhotoCheck } from '../PhotoCheck';
 import { removeUser, setQueryForSearch } from '../../redux/ContactReducer';
 import exit from '../../images/logout_icon.png';
 
 export const MyInfo: React.FC = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [query, setQuery] = useState('');
 
   const handlerChangeInput = useCallback((newQuery) => {
@@ -16,6 +18,7 @@ export const MyInfo: React.FC = () => {
 
   const handlerLogout = useCallback(() => {
     dispatch(removeUser());
+    navigate('/');
   }, []);
 
   return (

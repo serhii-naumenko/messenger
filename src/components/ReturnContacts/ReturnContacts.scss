@@ -4,10 +4,10 @@
   background-color: $main-background;
   border-bottom: 1px solid $color-board-separator;
 
-  @include screen800 {
+  @include screen768 {
     display: none;
   }
-  
+
   &__link {
     height: $height-ReturnContacts;
     padding: 0 20px;
@@ -15,7 +15,6 @@
   }
 
   &__arrow {
-    display: block;
     width: 100%;
   }
 }

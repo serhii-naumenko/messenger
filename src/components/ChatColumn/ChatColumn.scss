@@ -5,17 +5,12 @@
     top: 0;
     left: 0;
     right: 0;
+
     flex-grow: 1;
     text-align: center;
     border-bottom: 1px solid $color-board-separator;
-    transform: translateX(-100%);
     
-    &:target {
-      transform: translateX(0);
-    }
-    
-    @include screen800 {
+    @include screen768 {
       position: static;
-      transform: translateX(0);
     }
 }
