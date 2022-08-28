@@ -36,7 +36,8 @@ interface InitialState {
     email: string | null,
     token: string | null,
     id: string | null,
-  }
+  },
+  isFirastDisplay: boolean,
 }
 
 const initialState: InitialState = {
@@ -45,6 +46,7 @@ const initialState: InitialState = {
   queryForSearch: '',
   answerFromChack: '',
   user: lastuser,
+  isFirastDisplay: true,
 };
 
 const contactReducer = createSlice({
@@ -91,6 +93,12 @@ const contactReducer = createSlice({
         },
       };
     },
+    setIsFirstDisplay: (state, action) => {
+      return {
+        ...state,
+        isFirastDisplay: action.payload,
+      };
+    },
   },
 });
 
@@ -100,6 +108,7 @@ export const selectors = {
   queryForSearch: (state: InitialState) => state.queryForSearch,
   answerFromChack: (state: InitialState) => state.answerFromChack,
   getUser: (state: InitialState) => state.user,
+  getIsFirstDisplay: (state: InitialState) => state.isFirastDisplay,
 };
 
 export const {
@@ -109,6 +118,7 @@ export const {
   setAnswerFromChack,
   setUser,
   removeUser,
+  setIsFirstDisplay,
 } = contactReducer.actions;
 
 export const { reducer } = contactReducer;
